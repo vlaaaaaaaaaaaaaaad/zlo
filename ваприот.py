@@ -6,6 +6,7 @@ import random
 import requests
 from io import BytesIO
 from mtranslate import translate
+from background import keep_alive
 
 # Замените 'YOUR_TOKEN_HERE' на ваш токен от BotFather
 TOKEN = '6466934577:AAFUolEJwW9ggIuBIsicjW40BBoYxoM1KGs'
@@ -87,5 +88,6 @@ async def handle_image_style(callback_query: types.CallbackQuery, callback_data:
     user_styles[callback_query.from_user.id] = new_style
     await bot.send_message(callback_query.message.chat.id, f"✅Вы успешно сменили режим на: `{new_style}`", parse_mode='Markdown')
 
+keep_alive()
 if __name__ == '__main__':
     executor.start_polling(dp)
