@@ -1,0 +1,4 @@
+aiogram==2.21
+mtranslate==1.8
+requests==2.28.1
+Flask==2.1.3
